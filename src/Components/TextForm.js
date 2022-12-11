@@ -8,6 +8,24 @@ export default function TextForm(props) {
         setText(newText);
     }
 
+    const handleLowClick = ()=>{
+      //console.log("Lowercase was clicked" + text);
+      let newText = text.toLowerCase();
+      setText(newText);
+  }
+
+  const handleClearClick = ()=>{
+     //console.log("Text was cleared");
+    let newText = '';
+    setText(newText);
+}
+
+//   const handleAlternateClick = ()=>{
+//   //console.log("Text was cleared");
+//     let newText =;
+//     setText(newText);
+// }
+
     const handleOnChange = (event)=>{
         console.log("On Change");
         setText(event.target.value);
@@ -28,12 +46,19 @@ export default function TextForm(props) {
           rows="8"
         ></textarea>
       </div>
-     <button className="btn btn-primary" onClick={handleUpClick}>Convert to UpperCase</button>
+     <button className="btn btn-primary mx-1" onClick={handleUpClick}>Convert to UpperCase</button>
+     <button className="btn btn-primary mx-1" onClick={handleLowClick}>Convert to LowerCase</button>
+     <button className="btn btn-primary mx-1" onClick={handleClearClick}>Clear Text</button>
+
     </div>
 
     <div className="container my-3">
-        <h1> Your text summary</h1>
+        <h2> Your text summary</h2>
         <p>{text.split(" ").length} words and {text.length} characters </p>
+        <p>{0.008 * text.split(" ").length} Minutes to read </p>
+
+        <h2>Preview</h2>
+        <p>{text}</p>
     </div>
     </>
   );
