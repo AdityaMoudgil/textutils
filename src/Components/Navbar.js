@@ -21,14 +21,20 @@ export default function Navbar(props) {
       </ul>
     </div>
     
-    <form className="d-flex" role="search">
+    {/* <form className="d-flex" role="search">
       <input className="form-control me-5" type="search" placeholder="Search" aria-label="Search"/>
       <button className="btn btn-outline-danger me-5" type="submit">Search</button>
-    </form>
+    </form> */}
     <div className={`form-check form-switch text-${props.mode==='light'? 'dark': 'light'}`}>
   <input className="form-check-input" onClick={props.toggleMode} type="checkbox" role="switch" id="flexSwitchCheckDefault"/>
-  <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Enable Dark Mode</label>
+  <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Enable Blue Theme Mode</label>
 </div>
+
+<div className={`form-check form-switch mx-2 text-${props.mode==='light'? 'dark': 'light'}`}>
+  <input className="form-check-input" onClick={props.toggleMode1} type="checkbox" role="switch" id="flexSwitchCheckDefault"/>
+  <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Enable Red Theme Mode</label>
+</div>
+
   </div>
 </nav>
   )
